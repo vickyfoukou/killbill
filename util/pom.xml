@@ -74,6 +74,12 @@
             <artifactId>guice-multibindings</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>8.2.1.jre11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.ning</groupId>
             <artifactId>async-http-client</artifactId>
         </dependency>
@@ -190,6 +196,7 @@
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
             <artifactId>killbill-internal-api</artifactId>
+            <version>0.22.5</version>
         </dependency>
         <dependency>
             <groupId>org.kill-bill.billing</groupId>
