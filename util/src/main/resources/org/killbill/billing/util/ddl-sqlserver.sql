@@ -33,6 +33,6 @@ CREATE TRIGGER update_serial_column
         DECLARE @table nvarchar(255);
         DECLARE @column nvarchar(255);
         SELECT @table = OBJECT_NAME(parent_object_id) FROM sys.objects WHERE sys.objects.name = OBJECT_NAME(@@PROCID)
-        SELECT @column = c.name, TYPE_NAME(c.USER_TYPE_ID) AS t_name from sys.columns c join sys.types t on c.user_type_id=t.user_type_id where c.object_id=OBJECT_ID(@table) AND TYPE_NAME(c.USER_TYPE_ID)="serial"
+        SELECT @column = c.name from sys.columns c join sys.types t on c.user_type_id=t.user_type_id where c.object_id=OBJECT_ID(@table) AND TYPE_NAME(c.USER_TYPE_ID)="serial"
         EXEC update_serial_column @Table = @table , @Column = @column
     END
